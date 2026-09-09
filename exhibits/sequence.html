@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>急救步骤排序 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 09 · 排序挑战</span>
+  <h1>🔀 急救步骤排序</h1>
+  <p class="desc">发现有人突然倒地，正确的处理顺序是什么？依次点击下面打乱的步骤，按你认为对的顺序排好。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div style="font-size:13px;color:var(--text-dim);">点击卡片加入右侧顺序，点错了可以撤销</div>
+
+    <div class="seq-pool" id="seqPool"></div>
+    <div style="margin:10px 0 4px;font-size:13px;color:var(--text-dim);">你的顺序：</div>
+    <div class="seq-selected" id="seqSelected"></div>
+
+    <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn" onclick="undoSeq()">撤销上一步</button>
+      <button class="btn primary" id="seqSubmitBtn" onclick="submitSeq()" disabled>提交排序</button>
+      <button class="btn" onclick="resetSeq()">重新开始</button>
+    </div>
+
+    <div class="result-banner" id="seqBanner"></div>
+    <div class="info-box" id="seqAnswerBox" style="display:none;"></div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/sequence.js"></script>
+</body>
+</html>

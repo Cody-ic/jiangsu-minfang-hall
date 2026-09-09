@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灭火挑战 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 05 · 限时小游戏</span>
+  <h1>🧯 灭火挑战</h1>
+  <p class="desc">火苗会不断从各处冒出来，点击即可扑灭；拖太久没处理，火势会蔓延出更多火苗。撑过 20 秒！</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div id="fireIntro">
+      <div class="info-box">
+        <b>灭火器使用口诀：</b>提（提起灭火器）→ 拔（拔掉保险销）→ 握（握住喷管对准火焰根部）→ 压（压下压把喷射）。
+      </div>
+      <button class="btn accent" style="margin-top:16px;" onclick="startFire()">拔掉保险销，开始扑救 →</button>
+    </div>
+
+    <div id="fireGame" style="display:none;">
+      <div class="fire-hud">
+        <span>剩余时间：<b id="fireTime">20</b>s</span>
+        <span>已扑灭：<b id="fireScore">0</b> 处</span>
+        <span>蔓延：<b id="fireSpread">0</b> 处</span>
+      </div>
+      <div class="fire-stage" id="fireStage"></div>
+    </div>
+
+    <div class="result-banner" id="fireBanner"></div>
+
+    <div style="margin-top:16px;">
+      <button class="btn primary" id="fireResetBtn" style="display:none;" onclick="resetFire()">再来一轮</button>
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/fire.js"></script>
+</body>
+</html>

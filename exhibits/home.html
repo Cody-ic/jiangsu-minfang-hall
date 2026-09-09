@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>居家安全找茬 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 14 · 防灾减灾区</span>
+  <h1>🏠 居家安全找茬</h1>
+  <p class="desc">下面这些居家场景里，有几个藏着安全隐患，点出你觉得有问题的卡片，其余的不用选。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="backpack-grid" id="homeGrid"></div>
+
+    <div style="margin-top:16px;">
+      <button class="btn primary" onclick="submitHome()">提交检查结果</button>
+      <button class="btn" onclick="resetHome()">重新检查</button>
+    </div>
+
+    <div class="pack-result" id="homeResult" style="display:none;"></div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心肺复苏训练台 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 08 · 体感训练</span>
+  <h1>🫀 心肺复苏训练台</h1>
+  <p class="desc">连续点击心脏图案（或按空格键）15 次，模拟胸外按压，我们来测测你的按压频率能不能落在标准区间。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="heart" id="heart" onclick="tap()">🫀</div>
+    <div class="bpm-readout" id="bpmValue">--<span> 次/分钟</span></div>
+    <div class="tap-counter" id="tapCounter">已按压 0 / 15</div>
+
+    <div style="margin-top:18px;">
+      <button class="btn primary" id="resetBtn" onclick="resetCpr()">重新开始</button>
+    </div>
+
+    <div class="result-banner" id="resultBanner"></div>
+
+    <div class="info-box">
+      <b>标准知识点：</b>成人胸外心脏按压频率应为 <b>100–120 次/分钟</b>，按压深度 5–6 厘米，
+      每次按压后让胸廓充分回弹。频率过慢供血不足，过快则按压深度和回弹容易不到位。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/cpr.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的民防体验官证书 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="index.html">展馆地图</a>
+    <a href="passport.html" class="active">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">最终环节</span>
+  <h1>🎖️ 我的民防体验官证书</h1>
+  <p class="desc">走过的展项越多，称号越亮。输入你的名字，生成专属证书，可以下载分享。</p>
+</div>
+
+<div class="wrap">
+  <div class="certificate-wrap">
+    <input id="nameInput" type="text" placeholder="输入你的名字（默认：这位参观者）"
+      style="padding:10px 16px;border-radius:999px;border:1px solid var(--panel-border);background:rgba(255,255,255,.04);color:var(--text);font-size:14px;width:260px;max-width:80%;text-align:center;">
+
+    <div style="margin-top:22px;">
+      <canvas id="certCanvas"></canvas>
+    </div>
+
+    <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn accent" onclick="downloadCert()">⬇ 下载证书图片</button>
+      <button class="btn" onclick="if(confirm('确定要清空全部展项进度，重新开始体验吗？')) resetProgress()">重新开始全部展项</button>
+    </div>
+  </div>
+
+  <div id="remainingBox" style="max-width:640px;margin:36px auto 0;"></div>
+
+  <a class="back-link" href="index.html">← 返回展馆地图</a>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/passport.js"></script>
+</body>
+</html>

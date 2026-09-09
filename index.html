@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>虚拟民防体验馆 | 江苏省民防体验馆参观纪实</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="index.html" class="active">展馆地图</a>
+    <a href="passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="hero">
+  <span class="eyebrow">江苏省民防体验馆 · 参观纪实</span>
+  <h1>欢迎来到虚拟民防体验馆</h1>
+  <p>这里复刻了馆内几个最有意思的互动展项 —— 不只是看文字，而是真的按一按、听一听、拖一拖。走完全部展项，还能领一张属于你的"民防体验官"证书。</p>
+
+  <div class="overall-progress">
+    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <div class="label" id="progressLabel">还没有开始体验，点击下方任意展项出发吧</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hall-grid" id="hallGrid"></div>
+
+  <div class="cta-row">
+    <a class="btn accent" href="passport.html">前往领取民防体验官证书 →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  素材来源：本次参观现场拍摄 + 公开人民防空法规 / 医学急救常识核实整理，部分地方性规定请以当地最新发布为准。
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  const links = {
+    wall: 'exhibits/wall.html',
+    timeline: 'exhibits/timeline.html',
+    siren: 'exhibits/siren.html',
+    evacuate: 'exhibits/evacuate.html',
+    fire: 'exhibits/fire.html',
+    earthquake: 'exhibits/earthquake.html',
+    triangle: 'exhibits/triangle.html',
+    cpr: 'exhibits/cpr.html',
+    sequence: 'exhibits/sequence.html',
+    firstaid: 'exhibits/firstaid.html',
+    iodine: 'exhibits/iodine.html',
+    radiation: 'exhibits/radiation.html',
+    equipment: 'exhibits/equipment.html',
+    home: 'exhibits/home.html',
+    backpack: 'exhibits/backpack.html',
+  };
+  const descs = {
+    wall: '12 道人防法规选择题，当场看对错，答完给你算总分。',
+    timeline: '点开时间轴上的年份节点，看人民防空和国防教育是怎么一步步走来的。',
+    siren: '亲耳听一听预先警报、空袭警报、解除警报三种节奏的区别。',
+    evacuate: '浓烟弥漫、视野受限，沿着安全出口指示找到逃生路线。',
+    fire: '火苗不断冒出，限时点击扑灭，试试你能撑住多久。',
+    earthquake: '预警倒计时响起后比拼反应速度，测测你的"就地避险"用了几秒。',
+    triangle: '地震发生时房间里到底该躲哪，点一个你觉得最安全的位置。',
+    cpr: '跟着心跳动画连续按压，看看你的频率是否落在 100–120 次/分。',
+    sequence: '把急救处置的几个步骤拖拽排对，顺序错了会有提示。',
+    firstaid: '几个出血情景，选对处理方式让出血条降下来。',
+    iodine: '拖动时间轴，直观看到碘化钾服用时机如何影响防护效果。',
+    radiation: '拖动距离、屏蔽、时间三个控件，直观感受辐射防护的三原则。',
+    equipment: '连一连，把民防应急装备和它的用途配对。',
+    home: '一组居家场景卡片，找出藏在里面的安全隐患。',
+    backpack: '背包容量有限，从一堆物资里选出真正该带的应急用品。',
+  };
+
+  function render() {
+    const progress = getProgress();
+    const grid = document.getElementById('hallGrid');
+    grid.innerHTML = '';
+    EXHIBITS.forEach((ex) => {
+      const done = !!progress[ex.id];
+      const card = document.createElement('a');
+      card.className = 'exhibit-card';
+      card.href = links[ex.id];
+      card.innerHTML = `
+        ${done ? '<span class="badge-done">已体验 ✓</span>' : ''}
+        <span class="icon">${ex.icon}</span>
+        <h3>${ex.name}</h3>
+        <p>${descs[ex.id]}</p>
+      `;
+      grid.appendChild(card);
+    });
+
+    const count = progressCount();
+    document.getElementById('progressPill').textContent = `${count} / ${EXHIBITS.length} 已体验`;
+    document.getElementById('progressFill').style.width = (count / EXHIBITS.length * 100) + '%';
+    document.getElementById('progressLabel').textContent =
+      count === 0 ? '还没有开始体验，点击下方任意展项出发吧' :
+      count === EXHIBITS.length ? '全部展项已完成，快去领取你的证书吧！' :
+      `已体验 ${count} 个展项，继续加油`;
+  }
+
+  render();
+</script>
+</body>
+</html>

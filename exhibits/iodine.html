@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>碘片服用时间窗 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 11 · 数据互动</span>
+  <h1>💊 碘片服用时间窗</h1>
+  <p class="desc">拖动滑块，看看在核事故"暴露时刻"前后不同时间服用稳定碘化钾，防护效果会怎样变化。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="iodine-readout">
+      <b id="iodineTimeLabel">正是暴露时刻</b>
+      <span id="iodinePctLabel" style="font-size:15px;color:var(--text-dim);">防护效果 100%</span>
+    </div>
+
+    <canvas class="iodine-chart" id="iodineChart"></canvas>
+
+    <div class="iodine-track">
+      <input type="range" class="iodine-slider" id="iodineSlider" min="-36" max="48" step="1" value="0">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-top:4px;">
+        <span>暴露前36小时</span>
+        <span>暴露时刻</span>
+        <span>暴露后48小时</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <b>关键知识点：</b>稳定碘化钾的最佳服用窗口是暴露于放射性碘 <b>前24小时至后2小时内</b>；
+      延迟到暴露后4小时服用，防护效果约降至50%；超过24小时基本失去防护意义。
+      服用过早（远早于24小时）同样会因单次剂量的24小时保护期已过而效果打折。
+      <br><br>实际服用请务必遵循当地卫生应急部门的官方指引，不要自行判断用药。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/iodine.js"></script>
+</body>
+</html>

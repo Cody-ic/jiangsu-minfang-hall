@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浓烟疏散逃生 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 04 · 情景小游戏</span>
+  <h1>🚪 浓烟疏散逃生</h1>
+  <p class="desc">视野被浓烟遮挡，只能看清脚下一小片区域。用方向键 / WASD 移动，找到 🚪 安全出口。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="evac-wrap">
+      <div id="evacGrid"></div>
+      <div class="evac-fog" id="evacFog"></div>
+    </div>
+
+    <div class="evac-hint">方向键 / WASD 移动 · 触屏可用下方按钮</div>
+    <div class="evac-timer" id="evacTimer">用时 0.0 秒</div>
+
+    <div id="dpad" style="display:grid;grid-template-columns:repeat(3,42px);grid-template-rows:repeat(2,42px);gap:6px;justify-content:center;margin-top:14px;">
+      <div></div>
+      <button class="btn" onclick="tryMove(-1,0)">↑</button>
+      <div></div>
+      <button class="btn" onclick="tryMove(0,-1)">←</button>
+      <button class="btn" onclick="tryMove(1,0)">↓</button>
+      <button class="btn" onclick="tryMove(0,1)">→</button>
+    </div>
+
+    <div style="margin-top:16px;">
+      <button class="btn primary" onclick="resetGame()">重新开始</button>
+    </div>
+
+    <div class="result-banner" id="evacBanner"></div>
+
+    <div class="info-box">
+      <b>疏散小贴士：</b>保持冷静、听从现场指挥；沿墙壁摸索寻找最近的安全出口标志，不要逆着人流拥挤；
+      浓烟环境中尽量弯腰低姿前进，用湿毛巾捂住口鼻减少呛咳。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/evacuate.js"></script>
+</body>
+</html>

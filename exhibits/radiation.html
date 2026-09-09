@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辐射安全三原则 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 12 · 核应急救援区</span>
+  <h1>☢️ 辐射安全三原则</h1>
+  <p class="desc">拖动"距离、屏蔽、时间"三个控件，直观感受它们对辐射暴露的影响。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="radiation-readout">
+      <span style="font-size:13px;color:var(--text-dim);">相对暴露指数</span>
+      <b id="radValue">--</b>
+      <span id="radZone" style="font-size:14px;"></span>
+    </div>
+    <div class="radiation-bar-track"><div class="radiation-bar-fill" id="radBar" style="width:0%;"></div></div>
+
+    <div class="radiation-controls">
+      <div class="row">
+        <label>距离辐射源：<span id="distLabel">10</span> 米</label>
+        <input type="range" id="distSlider" min="1" max="50" value="10" style="width:100%;accent-color:var(--blue);">
+      </div>
+      <div class="row">
+        <label>屏蔽方式</label>
+        <select id="shieldSelect">
+          <option value="1">无屏蔽</option>
+          <option value="0.7">木板 / 厚衣物</option>
+          <option value="0.3">砖墙</option>
+          <option value="0.1" selected>混凝土墙</option>
+          <option value="0.02">铅板</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>停留时间：<span id="timeLabel">10</span> 分钟</label>
+        <input type="range" id="timeSlider" min="1" max="60" value="10" style="width:100%;accent-color:var(--orange);">
+      </div>
+    </div>
+
+    <div class="info-box">
+      <b>辐射防护三原则：</b>尽量增大与辐射源的<b>距离</b>（距离越远、剂量下降越快）；
+      利用墙体等<b>屏蔽</b>物阻挡辐射；尽量缩短暴露<b>时间</b>。三者结合能显著降低受照剂量。
+      <br><br>本展示为原理示意，非精确剂量计算，实际防护请以专业辐射监测和官方指引为准。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/radiation.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地震反应速度挑战 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 06 · 反应速度</span>
+  <h1>🏚️ 地震反应速度挑战</h1>
+  <p class="desc">地震预警从监测到警报只有几秒到几十秒。共 3 轮，警报一响就立刻点击"就地避险"，比比你的反应速度。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="eq-status" id="eqStatus">点击下方按钮开始测试</div>
+    <div class="eq-alert" id="eqAlert"></div>
+
+    <button class="btn accent" id="eqActionBtn" onclick="eqAction()">🛡️ 就地避险（伏地·遮挡·手抓牢）</button>
+
+    <div class="eq-rounds" id="eqRounds"></div>
+    <div class="result-banner" id="eqBanner"></div>
+
+    <div style="margin-top:16px;">
+      <button class="btn primary" id="eqStartBtn" onclick="startEqTest()">开始测试</button>
+      <button class="btn" id="eqRestartBtn" style="display:none;" onclick="restartEq()">重新测试</button>
+    </div>
+
+    <div class="info-box">
+      <b>避险口诀：</b>伏地（就地趴下降低重心）、遮挡（用桌子等遮挡物护住头颈）、手抓牢（抓住桌腿等固定物，防止移位）。
+      收到预警后，黄金反应时间往往只有几秒钟。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/earthquake.js"></script>
+</body>
+</html>

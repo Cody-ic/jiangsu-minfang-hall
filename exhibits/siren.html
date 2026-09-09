@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>防空警报试听台 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 03 · 声音互动</span>
+  <h1>📢 防空警报试听台</h1>
+  <p class="desc">点击按钮，现场合成三种防空警报信号的节奏，亲耳分辨它们的区别（请开启音量）。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="siren-buttons">
+      <button class="btn primary" id="btnPre" onclick="playPattern('pre')">🔔 预先警报</button>
+      <button class="btn accent" id="btnRaid" onclick="playPattern('raid')">🚨 空袭警报</button>
+      <button class="btn" id="btnClear" onclick="playPattern('clear')">✅ 解除警报</button>
+    </div>
+
+    <canvas id="waveform"></canvas>
+
+    <div class="info-box">
+      <b>真实鸣放规范（供对照，网页演示已压缩时长）：</b><br>
+      · 预先警报：鸣36秒，停24秒，重复3次，全程3分钟<br>
+      · 空袭警报：鸣6秒，停6秒，重复15次，全程3分钟<br>
+      · 解除警报：连续鸣3分钟<br>
+      江苏省每年 <b>9月18日</b> 上午 10:00–10:19 统一试鸣三种信号。
+      <br><br>
+      <b>说明：</b>这里用网页音频现场合成节奏来模拟三种信号的区别，音色会因你电脑/手机的扬声器而不同，
+      和现场警报器、手机预警推送的声音不完全一样，重点体会"鸣—停"的节奏差异即可。
+    </div>
+
+    <div class="result-banner good" id="doneBanner">三种警报都听过啦，展项完成！</div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/siren.js"></script>
+</body>
+</html>

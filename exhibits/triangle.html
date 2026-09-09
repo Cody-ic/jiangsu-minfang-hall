@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地震避险选位 | 虚拟民防体验馆</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>虚拟民防体验馆</a>
+  <nav>
+    <a href="../index.html">展馆地图</a>
+    <a href="../passport.html">我的证书</a>
+    <span class="progress-pill" id="progressPill">0 / 15 已体验</span>
+  </nav>
+</div>
+
+<div class="exhibit-header">
+  <span class="tag">展项 07 · 情景判断</span>
+  <h1>🔺 地震避险选位</h1>
+  <p class="desc">室内突然剧烈晃动，房间里这几个位置，你会躲去哪一个？点一个试试，选错了可以再选。</p>
+</div>
+
+<div class="wrap">
+  <div class="stage">
+    <div class="room-box" id="roomBox">
+      <button class="room-spot" id="spotWindow"><span class="icon">🪟</span>靠窗边</button>
+      <button class="room-spot" id="spotTable"><span class="icon">🪑</span>桌子旁</button>
+      <button class="room-spot" id="spotDoor"><span class="icon">🚪</span>门框下</button>
+      <button class="room-spot" id="spotCenter"><span class="icon">▫️</span>房间正中央</button>
+    </div>
+
+    <div class="result-banner" id="triBanner"></div>
+    <div class="info-box">
+      <b>避险要点：</b>靠近坚固的桌子等家具蹲下、护住头颈并抓牢桌腿，是目前普遍推荐的室内避险方式；
+      站在门框下、靠近窗户、蹲在开阔地面正中央都存在明显风险。
+    </div>
+  </div>
+
+  <a class="back-link" href="../index.html">← 返回展馆地图</a>
+</div>
+
+<script src="../js/common.js"></script>
+<script src="../js/triangle.js"></script>
+</body>
+</html>
